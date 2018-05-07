@@ -81,7 +81,7 @@ if __name__=='__main__':
         pt_sample=tria_sample+(trib_sample-tria_sample)*tf.expand_dims(us,-1)+(tric_sample-tria_sample)*tf.expand_dims(vs,-1)
         print('pt_sample: ', pt_sample)
         reduced_sample=gather_point(pt_sample,farthest_point_sample(1024,pt_sample))
-        print reduced_sample
+        print(reduced_sample)
     with tf.Session('') as sess:
         ret=sess.run(reduced_sample)
     print ret.shape,ret.dtype
