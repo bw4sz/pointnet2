@@ -6,20 +6,19 @@
 
 #SBATCH --ntasks=1                 # Number of MPI ranks
 #SBATCH --cpus-per-task=1            # Number of cores per MPI rank
-#SBATCH --time=24:00:00       #Time limit hrs:min:sec
+#SBATCH --time=1:00:00       #Time limit hrs:min:sec
 #SBATCH --output=/home/b.weinstein/logs/pointnet2.out   # Standard output and error log
 #SBATCH --error=/home/b.weinstein/logs/pointnet2.err
-#SBATCH --mem-per-cpu=1000
+#SBATCH --mem-per-cpu=10000
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:tesla:1
 
-#activate conda environment
-source activate pointnet
+ml tensorflow/1.7.0
 
-ml cuda
 
-#python -c "import tensorflow;print(tensorflow.__version__)"
+python3 -c "import tensorflow;print(tensorflow.__version__)"
+python3 -c "import cv2;print(cv2.__version__)"
 
-python /home/b.weinstein/pointnet2/hpc/test_gpu.py
+python3 /home/b.weinstein/pointnet2/hpc/test_gpu.py
 
 date
