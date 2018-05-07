@@ -16,7 +16,6 @@
 #activate conda environment
 
 ml tensorflow/1.7.0
-ml cuda
 
 #python -c "import tensorflow;print(tensorflow.__version__)"
 
