@@ -10,16 +10,16 @@
 #SBATCH --output=/home/b.weinstein/logs/pointnet2.out   # Standard output and error log
 #SBATCH --error=/home/b.weinstein/logs/pointnet2.err
 #SBATCH --mem-per-cpu=1000
-#SBATCH --partition=hpg2-gpu
+#SBATCH --partition=gpu
 #SBATCH --gres=gpu:tesla:1
 
 #activate conda environment
-source activate pointnet2
+source activate pointnet
 
 ml cuda
 
 #python -c "import tensorflow;print(tensorflow.__version__)"
 
-python test_gpu.py
+python /home/b.weinstein/pointnet2/hpc/test_gpu.py
 
 date
