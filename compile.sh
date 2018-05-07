@@ -14,7 +14,7 @@ export PYTHONPATH=/home/b.weinstein/miniconda3/envs/pointnet2/lib/python3.6/site
 TF_INC=/home/b.weinstein/miniconda3/envs/pointnet2/lib/python3.6/site-packages/tensorflow/include
 TF_LIB=/home/b.weinstein/miniconda3/envs/pointnet2/lib/python3.6/site-packages/tensorflow/
 
-#Compile ops
+#Compile ops#
 #3d tf_interpolate
 g++ -std=c++11 tf_ops/3d_interpolation/tf_interpolate.cpp -o tf_ops/3d_interpolation/tf_interpolate_so.so -shared -fPIC -I /home/b.weinstein/miniconda3/envs/pointnet2/lib/python3.6/site-packages/tensorflow/include -I /apps/cuda/9.0.176/include -I /home/b.weinstein/miniconda3/envs/pointnet2/lib/python3.6/site-packages/tensorflow/include/external/nsync/public -lcudart -L /apps/cuda/9.0.176/lib64/ -L /home/b.weinstein/miniconda3/envs/pointnet2/lib/python3.6/site-packages/tensorflow/ -ltensorflow_framework -O2 -D_GLIBCXX_USE_CXX11_ABI=0
 

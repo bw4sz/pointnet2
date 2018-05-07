@@ -14,11 +14,13 @@
 #SBATCH --gres=gpu:tesla:1
 
 #activate conda environment
-source activate pointnet2
 
+ml tensorflow/1.7.0
 ml cuda
 
 #python -c "import tensorflow;print(tensorflow.__version__)"
+
+#python -c "import cv2;print(cv2.__version__)"
 
 python test_gpu.py
 
